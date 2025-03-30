@@ -27,8 +27,8 @@ class CourseSerializer(serializers.ModelSerializer):
         write_only=True
     )
 
-    classroom = ClassroomSerializer(read_only=True)  # ✅ عرض القاعة كاملة
-    classroom_id = serializers.PrimaryKeyRelatedField(
+    classroom = ClassroomSerializer(read_only=True)  # للعرض
+    classroom_id = serializers.PrimaryKeyRelatedField(  # للكتابة بنفس اسم الحقل في الواجهة
         queryset=Classroom.objects.all(),
         source='classroom',
         write_only=True
@@ -44,7 +44,7 @@ class CourseSerializer(serializers.ModelSerializer):
             'doctor',
             'doctor_id',
             'classroom',
-            'classroom_id',
+            'classroom_id',  # نفس اسم الحقل الجاي من React
             'num_students'
         ]
 
@@ -56,6 +56,8 @@ class CourseSerializer(serializers.ModelSerializer):
             setattr(instance, attr, value)
         instance.save()
         return instance
+
+
 
 
 # Serializer للجدول الدراسي
