@@ -9,7 +9,7 @@ services:
       - key: DJANGO_SETTINGS_MODULE
         value: university_display.settings
       - key: DEBUG
-        value: "False"
+        value: "True"  # ✅ فعلناها مؤقتًا علشان نشوف الخطأ
       - key: SECRET_KEY
         generateValue: true
       - key: ALLOWED_HOSTS
