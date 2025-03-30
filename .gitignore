@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+.env
+
+# Django
+staticfiles/
+media/
+
+# Node (React Native وغيره)
+node_modules/
+npm-debug.log
+.expo/
+.expo-shared/
+
+# VS Code
+.vscode/
