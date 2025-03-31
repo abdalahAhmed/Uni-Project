@@ -14,14 +14,14 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: ALLOWED_HOSTS
-        value: .onrender.com
+        value: .railway.app localhost 127.0.0.1
       - key: DB_NAME
-        value: university_display_db
+        value: railway
       - key: DB_USER
-        value: university_display_db_user
+        value: postgres
       - key: DB_PASSWORD
-        value: fpK8aElu1H9wwopYy4OtKanrpNqLPAwt
+        value: AjNmNGXjjXyJitnkWovfMmFkpqFcKpJs
       - key: DB_HOST
-        value: dpg-cvkuihs9c44c73dajtf0-a
+        value: postgres.railway.internal
       - key: DB_PORT
-        value: 5432
+        value: "5432"
