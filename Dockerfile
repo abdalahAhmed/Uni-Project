@@ -9,7 +9,8 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y netcat gcc libpq-dev
+RUN apt-get update && apt-get install -y netcat-openbsd gcc libpq-dev
+
 
 # Install Python dependencies
 COPY requirements.txt /app/
