@@ -14,7 +14,7 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: ALLOWED_HOSTS
-        value: .railway.app localhost 127.0.0.1
+        value: university-display-backend-production.up.railway.app .railway.app localhost 127.0.0.1
       - key: DB_NAME
         value: railway
       - key: DB_USER
