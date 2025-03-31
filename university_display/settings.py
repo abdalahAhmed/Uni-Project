@@ -31,7 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-...')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost 127.0.0.1 .railway.app').split()
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'university-display-backend-production.up.railway.app .railway.app localhost 127.0.0.1').split()
+
 
 
 
@@ -161,10 +162,13 @@ import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
+        'NAME': os.environ.get('DB_NAME', 'railway'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
         'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
