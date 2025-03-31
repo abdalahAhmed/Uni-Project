@@ -6,7 +6,9 @@ services:
     buildCommand: |
       pip install -r requirements.txt
     startCommand: |
+      echo "⚙️ Running Migrations..." &&
       python manage.py migrate &&
+      echo "✅ Migrations done." &&
       python manage.py collectstatic --noinput &&
       gunicorn university_display.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
