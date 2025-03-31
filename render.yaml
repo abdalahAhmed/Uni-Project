@@ -5,10 +5,10 @@ services:
     env: python
     buildCommand: |
       pip install -r requirements.txt
-      python manage.py migrate
-      echo "✅ MIGRATION DONE"
-      python manage.py collectstatic --noinput
-    startCommand: gunicorn university_display.wsgi:application --bind 0.0.0.0:$PORT
+    startCommand: |
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput &&
+      gunicorn university_display.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: university_display.settings
@@ -23,7 +23,7 @@ services:
       - key: DB_USER
         value: university_display_db_user
       - key: DB_PASSWORD
-        value: <كلمة السر من قاعدة البيانات>
+        value: fpK8aElu1H9wwopYy4OtKanrpNqLPAwt
       - key: DB_HOST
         value: dpg-cvkuihs9c44c73dajtf0-a
       - key: DB_PORT
