@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     
     
 ]
