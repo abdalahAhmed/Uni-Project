@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     
     
 ]
@@ -68,6 +67,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'university_display.urls'
 
