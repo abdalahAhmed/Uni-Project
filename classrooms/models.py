@@ -4,7 +4,7 @@ from accounts.models import CustomUser  # Custom user model
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=200, blank=True)
-    section = models.CharField(max_length=100, default="شعبة عامة")  # نخزن اسم الشعبة مباشرة
+    
 
     def __str__(self):
         return f"{self.name} - {self.section}"
