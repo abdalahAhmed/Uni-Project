@@ -1,0 +1,27 @@
+services:
+  - type: web
+    plan: free
+    name: university-display-backend
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: ./start.sh
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: university_display.settings
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_HOSTS
+        value: university-display-backend-production.up.railway.app .railway.app localhost 127.0.0.1
+      - key: DB_NAME
+        value: railway
+      - key: DB_USER
+        value: postgres
+      - key: DB_PASSWORD
+        value: AjNmNGXjjXyJitnkWovfMmFkpqFcKpJs
+      - key: DB_HOST
+        value: postgres.railway.internal
+      - key: DB_PORT
+        value: "5432"
