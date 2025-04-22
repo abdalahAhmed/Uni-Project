@@ -42,3 +42,4 @@ typing_extensions==4.12.2
 tzdata==2024.1
 whitenoise==6.9.0
 zope.interface==7.2
+django-environ==0.12.0
