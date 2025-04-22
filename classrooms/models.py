@@ -5,7 +5,8 @@ from accounts.models import CustomUser  # Custom user model
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=200, blank=True)
-    capacity = models.PositiveIntegerField(default=0)
+    capacity = models.PositiveIntegerField(default=0, verbose_name="السعة")
+
 
     def __str__(self):
         return f"{self.name} ({self.capacity} مقعد)"

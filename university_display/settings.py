@@ -43,6 +43,7 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
 
 
 # Application definition
+print("🎯 CONNECTED TO DB:", env("DB_NAME"))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
