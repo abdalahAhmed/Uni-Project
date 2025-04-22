@@ -21,4 +21,4 @@ python manage.py collectstatic --noinput
 
 # تشغيل السيرفر
 echo "🚀 Starting Gunicorn..."
-exec gunicorn university_display.wsgi:application --bind 0.0.0.0:"$PORT"
+exec gunicorn university_display.wsgi:application --bind 0.0.0.0:$PORT
