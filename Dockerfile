@@ -19,8 +19,8 @@ RUN pip install -r requirements.txt
 # Copy project
 COPY . /app/
 
-# ✅ Add execute permission for start.sh
-RUN chmod +x start.sh
+# ✅ Add execute permission for the renamed entrypoint script
+RUN chmod +x entrypoint.sh
 
-# Run the start script
-CMD ["bash", "start.sh"]
+# Run the new entrypoint script
+CMD ["bash", "entrypoint.sh"]
