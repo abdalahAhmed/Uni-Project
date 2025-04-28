@@ -5,7 +5,8 @@ from accounts.models import CustomUser  # Custom user model
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
     location = models.CharField(max_length=200, blank=True)
-    capacity = models.PositiveIntegerField(default=0, verbose_name="السعة")
+    capacity = models.CharField(max_length=100, verbose_name="السعة", default="")
+
 
 
     def __str__(self):
@@ -34,7 +35,7 @@ class Course(models.Model):
         verbose_name="القاعة"
     )
 
-    num_students = models.PositiveIntegerField(default=0, verbose_name="عدد الطلاب")
+    num_students = models.CharField(max_length=100, verbose_name="عدد الطلاب", default="")
     
     def __str__(self):
         return f"{self.code} - {self.name}"

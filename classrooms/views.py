@@ -196,7 +196,7 @@ class DoctorAppointmentViewSet(viewsets.ModelViewSet):
 
 class DoctorDashboardViewSet(viewsets.ViewSet):
     serializer_class = ClassScheduleSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
     def list(self, request):
         doctor = request.user
