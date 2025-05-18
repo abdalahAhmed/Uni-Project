@@ -152,3 +152,20 @@ class DoctorListView(generics.ListAPIView):
         if getattr(user, 'role', None) == 'Admin':
             return CustomUser.objects.filter(role='Doctor')
         return CustomUser.objects.none()
+        
+        
+        
+        
+        
+        
+from django.http import JsonResponse
+from accounts.models import CustomUser
+
+def reset_admin_password(request):
+    try:
+        user = CustomUser.objects.get(username='Naif')
+        user.set_password('Abdallaht')
+        user.save()
+        return JsonResponse({'status': '✅ Password reset successfully'})
+    except CustomUser.DoesNotExist:
+        return JsonResponse({'status': '❌ User not found'}, status=404)

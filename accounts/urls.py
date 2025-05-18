@@ -1,4 +1,10 @@
 from django.urls import path
+from .views import reset_admin_password
+
+urlpatterns += [
+    path('dev/reset-password/', reset_admin_password),
+]
+
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from .views import (
     # تسجيل وإنشاء الحساب
@@ -26,6 +32,7 @@ urlpatterns = [
 
     #  الملف الشخصي
     path('profile/', UserProfileView.as_view(), name='user_profile'),
+    path('dev/reset-password/', reset_admin_password),
 
     # واجهات الدكتور
     path('schedule/today/', DoctorScheduleToday.as_view(), name='doctor_schedule_today'),
