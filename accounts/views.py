@@ -161,7 +161,11 @@ class DoctorListView(generics.ListAPIView):
 from django.http import JsonResponse
 from accounts.models import CustomUser
 
+@csrf_exempt  # ⬅️ هذا مهم جداً
 def reset_admin_password(request):
+    if request.method != 'GET':  # نسمح فقط بـ GET لمزيد من الأمان
+        return JsonResponse({'status': '❌ Invalid method'}, status=405)
+    
     try:
         user = CustomUser.objects.get(username='Naif')
         user.set_password('Abdallaht')
@@ -169,3 +173,6 @@ def reset_admin_password(request):
         return JsonResponse({'status': '✅ Password reset successfully'})
     except CustomUser.DoesNotExist:
         return JsonResponse({'status': '❌ User not found'}, status=404)
+    except Exception as e:
+        return JsonResponse({'status': '❌ Error', 'details': str(e)}, status=500)
+✅ ثم:
