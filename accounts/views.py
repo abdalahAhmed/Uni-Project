@@ -8,6 +8,8 @@ from classrooms.models import ClassSchedule, Classroom
 from .serializers import RegisterSerializer, UserSerializer
 from classrooms.serializers import ClassScheduleSerializer, ClassroomSerializer
 from datetime import datetime
+from django.views.decorators.csrf import csrf_exempt
+
 
 
 def get_day_code():
@@ -175,4 +177,3 @@ def reset_admin_password(request):
         return JsonResponse({'status': '❌ User not found'}, status=404)
     except Exception as e:
         return JsonResponse({'status': '❌ Error', 'details': str(e)}, status=500)
-✅ ثم:
